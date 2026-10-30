@@ -48,7 +48,7 @@ The following waveform screenshot compares the propagation delay measurement for
 - Top: 5 fF load, delay ≈ 29 ps
 - Bottom: 10 fF load, delay ≈ 48.1 ps
 
-!(images/inverter_delay_comparison.png)
+![CMOS Inverter Delay Comparison](images/inverter_delay_comparison.png)
 
 ## 7. Conclusion
 
