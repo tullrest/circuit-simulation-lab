@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# HSPICE simulation outputs
+*.out
+*.lis
+*.tr0
+*.sw0
+*.ac0
+*.mt0
+*.st0
+*.log
+
+# PDK model files
+*.pm
+
+# Python
+__pycache__/
+*.pyc
+.venv/
