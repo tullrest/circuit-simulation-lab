@@ -41,18 +41,17 @@ When the load capacitance was doubled:
 - Propagation delay increased by approximately 65.9%.
 - Average power increased by approximately 106.8%.
 
-## 6. Conclusion
+## 6. Waveform Comparison
+
+The following waveform screenshot compares the propagation delay measurement for two load capacitance conditions.
+
+- Top: 5 fF load, delay ≈ 29 ps
+- Bottom: 10 fF load, delay ≈ 48.1 ps
+
+!(images/inverter_delay_comparison.png)
+
+## 7. Conclusion
 
 Increasing the output load capacitance increased both propagation delay and average power consumption in this simulation.
 
 This experiment helped me understand the relationship between capacitive loading, circuit speed, and power consumption.
-
-## 7. Future Work
-
-- Test additional capacitance values
-- Automate HSPICE simulations using Python
-- Compare simulation results using graphs
-
-## Acknowledgment
-
-This is an introductory learning exercise based on HSPICE training provided at San Francisco State University.
