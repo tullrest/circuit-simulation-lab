@@ -1,51 +1,53 @@
-# Circuit Simulation Lab
+# Circuit Simulation & Analysis
 
-A collection of hands-on circuit simulation experiments focused on CMOS circuits, semiconductor fundamentals, and Python-based automation.
+Hands-on CMOS circuit simulation, timing/power analysis, and Python-assisted data visualization by an Electrical Engineering student at **San Francisco State University**.
 
-## About This Repository
+This repository documents simulation exercises and technical learning related to digital integrated circuits. It is a personal project portfolio, **not** a release of proprietary lab designs or a complete semiconductor process design kit.
 
-I am an Electrical Engineering student at San Francisco State University interested in digital hardware design and semiconductor engineering.
+## Featured Project: CMOS Inverter Characterization
 
-This repository documents my learning process, simulation experiments, and future automation projects.
+**[View full experiment, measurements, and plots](hspice/cmos-inverter/README.md)**
 
-## Tools & Technologies
+Investigated how output load capacitance affects a CMOS inverter's propagation delay and average power consumption using **Synopsys HSPICE** and **WaveView**. Subsequently used a Python-based simulation workflow to sweep load capacitances, export measurements, and plot results.
 
-- Synopsys HSPICE — Circuit simulation
-- Synopsys WaveView — Waveform analysis
-- Linux — Simulation environment
-- Python — Simulation automation (planned)
+**Automated sweep results:**
 
-## Projects
+| Load | Average Power | Propagation Delay |
+|---:|---:|---:|
+| 1 fF | 141.48 nW | 11.16 ps |
+| 2 fF | 248.40 nW | 16.77 ps |
+| 5 fF | 609.32 nW | 29.00 ps |
+| 10 fF | 1,230.00 nW | 48.03 ps |
+| 20 fF | 2,489.30 nW | 90.89 ps |
 
-### 01. CMOS Inverter Simulation
+**Observation:** Under these simulated conditions, both average power and propagation delay increased as load capacitance increased.
 
-**Objective:** Investigate how output load capacitance affects propagation delay and average power consumption.
+![Propagation delay versus load capacitance](hspice/cmos-inverter/images/delay_vs_load.png)
 
-**Experiment Results**
+![Average power versus load capacitance](hspice/cmos-inverter/images/power_vs_load.png)
 
-| Load Capacitance | Propagation Delay | Average Power |
-|---|---|---|
-| 5 fF | ~29 ps | 617.7 nW |
-| 10 fF | ~48.1 ps | 1,277.4 nW |
+## Tools & Skills
 
-**Key Findings:**
-- Increasing load capacitance increased propagation delay.
-- Average power consumption also increased.
-- Propagation delay was measured using the 50% voltage crossing points.
+- **Circuit simulation:** Synopsys HSPICE, transient simulation, SPICE measurement commands
+- **Waveform analysis:** Synopsys WaveView, propagation delay and switching behavior
+- **Automation and analysis:** Python, CSV processing, Matplotlib
+- **Environment:** Linux command line, Git and GitHub
 
-*These results are from an introductory HSPICE simulation exercise.*
+## Repository Contents
 
-### 02. Python Simulation Automation
+- `hspice/cmos-inverter/README.md` — experiment setup, methodology, measurements, validation, and limitations
+- `hspice/cmos-inverter/analysis/plot_results.py` — script to regenerate the power/delay plots from the included CSV
+- `hspice/cmos-inverter/results/` — exported simulation measurements
+- `hspice/cmos-inverter/images/` — visualization and waveform comparison
 
-Planned: Automating HSPICE simulations and collecting measurement results using Python.
+To regenerate the two data plots (Python 3 with Matplotlib installed), run from the repository root:
 
-## Learning Goals
+```bash
+python3 hspice/cmos-inverter/analysis/plot_results.py
+```
 
-- Understand transistor-level circuit simulation
-- Analyze timing and power characteristics
-- Automate repetitive simulations using Python
-- Develop practical semiconductor engineering skills
+**Scope and reproducibility:** The exported measurement CSVs and plotting script are available here. HSPICE, the transistor models, and the private simulation execution environment are not included. Therefore the plots can be reproduced from the supplied CSV data, but the underlying circuit simulations cannot be rerun using this repository alone.
 
-## Project Status
+## Current Focus
 
-Ongoing — New experiments and scripts will be added as I continue learning.
+Building a foundation in transistor-level simulation, timing and power characterization, Python automation, and digital hardware design, with a longer-term interest in **RTL design, CPU/SoC functional verification, and computer architecture**.
